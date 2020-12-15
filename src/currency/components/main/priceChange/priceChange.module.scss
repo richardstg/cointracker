@@ -1,0 +1,26 @@
+.table {
+  th,
+  td {
+    border-color: rgba(255, 255, 255, 0.26);
+    padding: 13px;
+    p {
+      margin-bottom: 0;
+      font-size: 0.8rem;
+    }
+  }
+
+  thead {
+    th {
+      border-bottom: none;
+    }
+  }
+  margin-bottom: 1rem;
+}
+
+.plus {
+  color: #61b947;
+}
+
+.minus {
+  color: #e13f2c;
+}

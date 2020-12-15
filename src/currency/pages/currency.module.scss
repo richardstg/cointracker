@@ -1,0 +1,13 @@
+.navigation {
+  font-weight: bold;
+  p {
+    margin: 0;
+  }
+  a {
+    color: white;
+    &:hover {
+      color: white;
+    }
+  }
+  margin-bottom: 2rem;
+}

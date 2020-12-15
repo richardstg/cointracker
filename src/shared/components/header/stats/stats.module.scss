@@ -1,0 +1,84 @@
+@import "../../../styles/variables.scss";
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  flex-wrap: wrap;
+  pre {
+    margin: 0;
+  }
+}
+
+.stats {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  p {
+    margin: 0;
+    margin-right: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: white;
+  }
+}
+
+.stat {
+  display: flex;
+}
+
+.blue {
+  color: #474dff;
+  font-weight: normal;
+}
+
+.normal {
+  font-weight: normal;
+}
+
+.plus {
+  color: #61b947;
+  font-weight: normal;
+}
+
+.minus {
+  color: #e13f2c;
+  font-weight: normal;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  flex-grow: 10;
+  justify-content: flex-end;
+  // padding-left: 100px;
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 575px) {
+}
+
+// Medium devices (tablets, 768px and up)
+@media (max-width: 767px) {
+}
+
+// Large devices (desktops, 992px and up)
+@media (max-width: 991px) {
+  .stats {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  .search {
+    justify-content: center;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (max-width: 1199px) {
+  .search {
+    // justify-content: center;
+    // padding-left: 0;
+  }
+}

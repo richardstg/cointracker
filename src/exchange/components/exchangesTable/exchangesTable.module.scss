@@ -1,0 +1,59 @@
+.table {
+  // table-layout: fixed|initial|inherit;
+  p {
+    margin-bottom: 0;
+    // font-size: 8px;
+  }
+  td,
+  th {
+    position: relative;
+    padding: 15px 15px;
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.26);
+    border-bottom: none;
+    text-align: right;
+    .name {
+      text-align: left;
+    }
+    .rank {
+      text-align: left;
+    }
+  }
+  thead {
+    background-color: rgba(0, 0, 0, 0.153);
+    th {
+      border-bottom: none;
+    }
+  }
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 18px;
+  margin-right: 15px;
+}
+
+.symbol {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.808);
+}
+
+.name {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  p {
+    color: white;
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+  a {
+    color: white;
+    font-weight: bold;
+    &:hover {
+      color: rgba(255, 255, 255, 0.901);
+    }
+    margin-bottom: 0;
+  }
+}

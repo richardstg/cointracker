@@ -1,0 +1,31 @@
+@import "../../../styles/variables.scss";
+
+.button {
+  display: inline;
+  padding: 0.46em 1.6em;
+  border: 0.1em solid transparent;
+  margin: 0;
+  border-radius: 5px;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: $header-font;
+  //   text-transform: uppercase;
+  //   width: 100%;
+  // font-weight: 300;
+  color: white;
+  //   font-weight: bold;
+  text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
+  background-color: #4046de;
+  text-align: center;
+  transition: all 0.2s ease-in;
+  //   box-shadow: inset 0px 0px 0px #4046de;
+  &:hover {
+    background-color: rgba(64, 69, 222, 0.623);
+    // background-color: rgba(43, 43, 43, 0.9);
+    // color: white;
+    // box-shadow: inset 0px 0px 150px#4046DE;
+  }
+  &:focus {
+    outline: none !important;
+  }
+}

@@ -1,0 +1,28 @@
+.marketPageNav {
+  display: flex;
+  // fill: rgba(255, 255, 255, 0.75);
+  // &:hover {
+  //   // cursor: pointer;
+  //   fill: rgba(255, 255, 255, 1);
+  // }
+  justify-content: flex-end;
+}
+
+.arrow {
+  svg {
+    width: 20px;
+    margin: 0 2px;
+  }
+  &:focus {
+    // outline: steelblue;
+  }
+}
+
+.disabled {
+  fill: rgba(255, 255, 255, 0.3);
+  a {
+    &:hover {
+      cursor: auto;
+    }
+  }
+}

@@ -1,0 +1,121 @@
+.overview {
+  margin-bottom: 1rem;
+}
+
+.name {
+  display: flex;
+  align-items: center;
+  h2 {
+    margin: 0;
+    // font-size: 26px;
+  }
+  img {
+    margin-right: 10px;
+  }
+  margin-bottom: 1rem;
+}
+
+.price {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  h2 {
+    margin: 0;
+    // font-size: 26px;
+    .changePercentage24h {
+      font-size: 1.3rem;
+      font-weight: normal;
+    }
+  }
+  margin-bottom: 1rem;
+}
+
+.plus {
+  color: #61b947;
+}
+
+.minus {
+  color: #e13f2c;
+}
+
+.table {
+  border: none;
+  th,
+  td {
+    border: none;
+    padding: 5px;
+    p,
+    a {
+      font-size: 0.8rem;
+    }
+    p,
+    a {
+      margin-bottom: 0;
+    }
+  }
+  td {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  th {
+    vertical-align: middle;
+  }
+  margin-bottom: 1rem;
+}
+
+.rank {
+  display: inline-flex;
+  margin-right: 5px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 5px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+}
+
+.link {
+  display: inline-flex;
+  margin-right: 5px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 5px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: #87b349;
+  fill: #87b349;
+  &:hover {
+    color: rgba(135, 179, 73, 0.753);
+    fill: rgba(135, 179, 73, 0.753);
+    text-decoration: none;
+  }
+  svg {
+    width: 14px;
+    margin-right: 4px;
+  }
+}
+
+.marketData {
+  padding-top: 5px;
+  width: 100%;
+  text-align: end;
+  h5 {
+    margin-bottom: 5px;
+    font-size: 0.8rem;
+  }
+  p {
+    margin-bottom: 10px;
+    font-size: 0.8rem;
+  }
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 767px) {
+  // .marketData {
+  //   text-align: left;
+  // }
+}

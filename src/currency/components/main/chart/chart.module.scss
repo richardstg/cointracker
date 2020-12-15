@@ -1,0 +1,40 @@
+@import "../../../../shared//styles/variables.scss";
+
+.chart {
+  margin-bottom: 1rem;
+}
+
+.timeSpan {
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  margin: 0;
+  background-color: transparent;
+  width: 50px;
+  font-size: 0.8rem;
+  padding: 5px;
+  text-align: center;
+  color: $body-color;
+  font-family: $body-font;
+}
+
+.buttons {
+  margin-top: 10px;
+}
+
+.active {
+  background-color: rgba(0, 0, 0, 0.26);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  h5 {
+    margin: 0;
+    font-size: 0.8rem;
+    color: #8d8b9e;
+  }
+  img {
+    width: 20px;
+    margin-right: 7px;
+  }
+}
