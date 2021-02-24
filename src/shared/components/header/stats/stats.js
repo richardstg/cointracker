@@ -19,12 +19,12 @@ const Stats = () => {
         const responseData = await response.json();
 
         if (!response.ok) {
-          throw new Error();
+          throw new Error(response.message);
         }
 
         setGlobalMarketStats(responseData.data);
       } catch (err) {
-        setError(err);
+        setError(err.message);
       }
     };
 

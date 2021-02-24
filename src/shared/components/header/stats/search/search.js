@@ -72,7 +72,7 @@ const Search = (props) => {
 
       setLoading(true);
       // Can only get 100 at a time from API, therefore, loop through and save in array
-      while (i <= 7) {
+      while (i <= 10) {
         try {
           response = await fetch(
             `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=${i}&sparkline=false&price_change_percentage=1h%2C24h%2C7d`
@@ -80,12 +80,12 @@ const Search = (props) => {
           responseData = await response.json();
 
           if (!response.ok) {
-            throw new Error();
+            throw new Error(response.message);
           }
 
           currencies = [...currencies, ...responseData];
         } catch (err) {
-          setError(err);
+          setError(err.message);
           setLoading(false);
         }
 
@@ -105,12 +105,12 @@ const Search = (props) => {
         const responseData = await response.json();
 
         if (!response.ok) {
-          throw new Error();
+          throw new Error(response.message);
         }
 
         setTrendingCurrencies(formatTrendingCurrencies(responseData.coins));
       } catch (err) {
-        setError(err);
+        setError(err.message);
       }
     };
 

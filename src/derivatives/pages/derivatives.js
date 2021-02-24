@@ -20,13 +20,13 @@ const Derivatives = (props) => {
         const responseData = await response.json();
 
         if (!response.ok) {
-          throw new Error();
+          throw new Error(response.message);
         }
 
         setDerivatives(responseData);
         setLoading(false);
       } catch (err) {
-        setError(err);
+        setError(err.message);
         setLoading(false);
       }
     };
@@ -37,14 +37,10 @@ const Derivatives = (props) => {
   return (
     <React.Fragment>
       <ErrorModal error={error} onClear={() => setError(null)} />
-      {derivatives.length > 0 && (
-        <React.Fragment>
-          <h3 className={classes.title}>
-            Top Derivative Exchanges by Open Interest & Trade Volume
-          </h3>
-          <DerivativesTable derivatives={derivatives} />
-        </React.Fragment>
-      )}
+      <h3 className={classes.title}>
+        Top Derivative Exchanges by Open Interest & Trade Volume
+      </h3>
+      {derivatives.length > 0 && <DerivativesTable derivatives={derivatives} />}
       {loading && <LoadingSpinner asOverlay />}
     </React.Fragment>
   );

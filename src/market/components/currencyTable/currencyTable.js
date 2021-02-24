@@ -37,107 +37,100 @@ const CurrencyTable = (props) => {
         </thead>
         <tbody>
           {props.currencies.map((currency) => (
-            <React.Fragment>
-              <tr>
-                <td>
-                  <p className={classes.rank}>{currency.market_cap_rank}</p>
-                </td>
-                <td>
-                  <div className={classes.coin}>
-                    <img
-                      className={classes.logo}
-                      alt="logo"
-                      src={currency.image}
-                    />
-                    <p className={classes.name}>
-                      <Link to={"/coin/" + currency.id}>{currency.name}</Link>{" "}
-                      <span className={classes.symbol}>
-                        {currency.symbol.toUpperCase()}
-                      </span>
-                    </p>
-                  </div>
-                </td>
-                <td>
-                  <p className={classes.price}>
-                    {formatter.format(currency.current_price)}
+            <tr key={currency.id}>
+              <td>
+                <p className={classes.rank}>{currency.market_cap_rank}</p>
+              </td>
+              <td>
+                <div className={classes.coin}>
+                  <img
+                    className={classes.logo}
+                    alt="logo"
+                    src={currency.image}
+                  />
+                  <p className={classes.name}>
+                    <Link to={"/coin/" + currency.id}>{currency.name}</Link>{" "}
+                    <span className={classes.symbol}>
+                      {currency.symbol.toUpperCase()}
+                    </span>
                   </p>
-                </td>
-                <td>
-                  <p
-                    className={`${classes.priceChange} ${
-                      currency.price_change_percentage_1h_in_currency &&
-                      currency.price_change_percentage_1h_in_currency.toFixed(
-                        1
-                      ) < 0 &&
-                      classes.minus
-                    } ${
-                      currency.price_change_percentage_1h_in_currency &&
-                      currency.price_change_percentage_1h_in_currency.toFixed(
-                        1
-                      ) > 0 &&
-                      classes.plus
-                    }`}
-                  >
-                    {currency.price_change_percentage_1h_in_currency === null
-                      ? "?"
-                      : noMinus(
-                          currency.price_change_percentage_1h_in_currency.toFixed(
-                            1
-                          )
-                        ) + "%"}
-                  </p>
-                </td>
-                <td>
-                  <p
-                    className={`${classes.priceChange} ${
-                      currency.price_change_percentage_24h &&
-                      currency.price_change_percentage_24h.toFixed(1) < 0 &&
-                      classes.minus
-                    } ${
-                      currency.price_change_percentage_24h &&
-                      currency.price_change_percentage_24h.toFixed(1) > 0 &&
-                      classes.plus
-                    }`}
-                  >
-                    {currency.price_change_percentage_24h === null
-                      ? "?"
-                      : noMinus(
-                          currency.price_change_percentage_24h.toFixed(1)
-                        ) + "%"}
-                  </p>
-                </td>
-                <td>
-                  <p
-                    className={`${classes.priceChange} ${
-                      currency.price_change_percentage_7d_in_currency &&
-                      currency.price_change_percentage_7d_in_currency.toFixed(
-                        1
-                      ) < 0 &&
-                      classes.minus
-                    } ${
-                      currency.price_change_percentage_7d_in_currency &&
-                      currency.price_change_percentage_7d_in_currency.toFixed(
-                        1
-                      ) > 0 &&
-                      classes.plus
-                    }`}
-                  >
-                    {currency.price_change_percentage_7d_in_currency === null
-                      ? "?"
-                      : noMinus(
-                          currency.price_change_percentage_7d_in_currency.toFixed(
-                            1
-                          )
-                        ) + "%"}
-                  </p>
-                </td>
-                <td>
-                  <p className={classes.marketCap}>
-                    {formatter.format(currency.market_cap)}
-                  </p>
-                </td>
-              </tr>
-            </React.Fragment>
+                </div>
+              </td>
+              <td>
+                <p className={classes.price}>
+                  {formatter.format(currency.current_price)}
+                </p>
+              </td>
+              <td>
+                <p
+                  className={`${classes.priceChange} ${
+                    currency.price_change_percentage_1h_in_currency &&
+                    currency.price_change_percentage_1h_in_currency.toFixed(1) <
+                      0 &&
+                    classes.minus
+                  } ${
+                    currency.price_change_percentage_1h_in_currency &&
+                    currency.price_change_percentage_1h_in_currency.toFixed(1) >
+                      0 &&
+                    classes.plus
+                  }`}
+                >
+                  {currency.price_change_percentage_1h_in_currency === null
+                    ? "?"
+                    : noMinus(
+                        currency.price_change_percentage_1h_in_currency.toFixed(
+                          1
+                        )
+                      ) + "%"}
+                </p>
+              </td>
+              <td>
+                <p
+                  className={`${classes.priceChange} ${
+                    currency.price_change_percentage_24h &&
+                    currency.price_change_percentage_24h.toFixed(1) < 0 &&
+                    classes.minus
+                  } ${
+                    currency.price_change_percentage_24h &&
+                    currency.price_change_percentage_24h.toFixed(1) > 0 &&
+                    classes.plus
+                  }`}
+                >
+                  {currency.price_change_percentage_24h === null
+                    ? "?"
+                    : noMinus(currency.price_change_percentage_24h.toFixed(1)) +
+                      "%"}
+                </p>
+              </td>
+              <td>
+                <p
+                  className={`${classes.priceChange} ${
+                    currency.price_change_percentage_7d_in_currency &&
+                    currency.price_change_percentage_7d_in_currency.toFixed(1) <
+                      0 &&
+                    classes.minus
+                  } ${
+                    currency.price_change_percentage_7d_in_currency &&
+                    currency.price_change_percentage_7d_in_currency.toFixed(1) >
+                      0 &&
+                    classes.plus
+                  }`}
+                >
+                  {currency.price_change_percentage_7d_in_currency === null
+                    ? "?"
+                    : noMinus(
+                        currency.price_change_percentage_7d_in_currency.toFixed(
+                          1
+                        )
+                      ) + "%"}
+                </p>
+              </td>
+              <td>
+                <p className={classes.marketCap}>
+                  {formatter.format(currency.market_cap)}
+                </p>
+              </td>
+            </tr>
           ))}
         </tbody>
       </Table>

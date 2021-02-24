@@ -51,16 +51,16 @@ const Navigation = (props) => {
                 >
                   Exchanges
                 </NavLink>
-                <NavItem className={classes.NavItem}>
-                  <NavLink
-                    className={classes.navLink}
-                    // activeClassName={classes.activeNavLink}
-                    to="/derivatives"
-                    exact
-                  >
-                    Derivatives
-                  </NavLink>
-                </NavItem>
+              </NavItem>
+              <NavItem className={classes.NavItem}>
+                <NavLink
+                  className={classes.navLink}
+                  // activeClassName={classes.activeNavLink}
+                  to="/derivatives"
+                  exact
+                >
+                  Derivatives
+                </NavLink>
               </NavItem>
             </React.Fragment>
           </Nav>

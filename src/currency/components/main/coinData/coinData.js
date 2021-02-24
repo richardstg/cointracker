@@ -16,8 +16,6 @@ import noMinus from "../../../../shared/utils/noMinus";
 // });
 
 const CoinData = ({ data }) => {
-  console.log(data);
-
   return (
     <Table className={classes.table}>
       <tbody>

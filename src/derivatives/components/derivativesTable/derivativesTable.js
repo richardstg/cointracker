@@ -28,44 +28,42 @@ const DerivativesTable = (props) => {
         </thead>
         <tbody>
           {props.derivatives.map((derivative) => (
-            <React.Fragment>
-              <tr>
-                <td>
-                  <div className={classes.name}>
-                    <img
-                      className={classes.logo}
-                      alt="logo"
-                      src={derivative.image}
-                    />
-                    <p className={classes.name}>
-                      <a target="_blank" rel="noreferrer" href={derivative.url}>
-                        {derivative.name}
-                      </a>
-                    </p>
-                  </div>
-                </td>
-                <td>
-                  <p className={classes.openInterest}>
-                    {derivative.open_interest_btc}
+            <tr key={derivative.name}>
+              <td>
+                <div className={classes.name}>
+                  <img
+                    className={classes.logo}
+                    alt="logo"
+                    src={derivative.image}
+                  />
+                  <p className={classes.name}>
+                    <a target="_blank" rel="noreferrer" href={derivative.url}>
+                      {derivative.name}
+                    </a>
                   </p>
-                </td>
-                <td>
-                  <p className={classes.volume}>
-                    {derivative.trade_volume_24h_btc}
-                  </p>
-                </td>
-                <td>
-                  <p className={classes.perpetuals}>
-                    {derivative.number_of_perpetual_pairs}
-                  </p>
-                </td>
-                <td>
-                  <p className={classes.futures}>
-                    {derivative.number_of_futures_pairs}
-                  </p>
-                </td>
-              </tr>
-            </React.Fragment>
+                </div>
+              </td>
+              <td>
+                <p className={classes.openInterest}>
+                  {derivative.open_interest_btc}
+                </p>
+              </td>
+              <td>
+                <p className={classes.volume}>
+                  {derivative.trade_volume_24h_btc}
+                </p>
+              </td>
+              <td>
+                <p className={classes.perpetuals}>
+                  {derivative.number_of_perpetual_pairs}
+                </p>
+              </td>
+              <td>
+                <p className={classes.futures}>
+                  {derivative.number_of_futures_pairs}
+                </p>
+              </td>
+            </tr>
           ))}
         </tbody>
       </Table>

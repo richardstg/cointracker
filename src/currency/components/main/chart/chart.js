@@ -84,6 +84,7 @@ const Chart = ({ data }) => {
       <div className={classes.buttons}>
         {timeSpans.map((timeSpan) => (
           <button
+            key={timeSpan}
             disabled={timeFormat === timeSpan}
             onClick={() => {
               chartInstance.destroy();

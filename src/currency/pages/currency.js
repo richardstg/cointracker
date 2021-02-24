@@ -22,14 +22,14 @@ const Currency = (props) => {
         const responseData = await response.json();
 
         if (!response.ok) {
-          throw new Error();
+          throw new Error(response.message);
         }
 
         setCurrency(responseData);
         // setLoading(false);
       } catch (err) {
         // setLoading(false);
-        setError(err);
+        setError(err.message);
       }
     };
 

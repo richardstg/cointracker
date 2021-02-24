@@ -20,13 +20,13 @@ const Exchanges = (props) => {
         const responseData = await response.json();
 
         if (!response.ok) {
-          throw new Error();
+          throw new Error(response.message);
         }
 
         setExchanges(responseData);
         setLoading(false);
       } catch (err) {
-        setError(err);
+        setError(err.message);
         setLoading(false);
       }
     };
@@ -37,14 +37,8 @@ const Exchanges = (props) => {
   return (
     <React.Fragment>
       <ErrorModal error={error} onClear={() => setError(null)} />
-      {exchanges.length > 0 && (
-        <React.Fragment>
-          <h3 className={classes.title}>
-            Top 100 Exchanges by Trust Score Rank
-          </h3>
-          <ExchangesTable exchanges={exchanges} />
-        </React.Fragment>
-      )}
+      <h3 className={classes.title}>Top 100 Exchanges by Trust Score Rank</h3>
+      {exchanges.length > 0 && <ExchangesTable exchanges={exchanges} />}
       {loading && <LoadingSpinner asOverlay />}
     </React.Fragment>
   );

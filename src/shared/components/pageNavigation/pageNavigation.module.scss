@@ -1,0 +1,49 @@
+@import "../../styles/variables.scss";
+
+.pageNavigation {
+  display: flex;
+  justify-content: flex-end;
+  a {
+    margin-bottom: 0;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: $body-color;
+    border: 1px solid #575760;
+    outline: none !important;
+    box-shadow: none !important;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+      border: 1px solid #575760;
+      color: white;
+      z-index: unset;
+    }
+  }
+  .active {
+    button {
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      border: 1px solid #575760;
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+        border: 1px solid #575760;
+        z-index: unset;
+      }
+    }
+  }
+  .disabled {
+    button {
+      background-color: rgba(0, 0, 0, 0.5);
+      border: 1px solid #575760;
+      color: $body-color;
+      &:hover {
+        color: $body-color;
+        z-index: unset;
+        cursor: auto;
+      }
+    }
+  }
+}

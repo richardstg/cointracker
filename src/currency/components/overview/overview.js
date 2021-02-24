@@ -72,6 +72,7 @@ const Overview = (props) => {
                     .filter((page) => page)
                     .map((page) => (
                       <a
+                        key={page}
                         target="_blank"
                         rel="noreferrer"
                         className={classes.link}
@@ -95,6 +96,7 @@ const Overview = (props) => {
                     .filter((page) => page)
                     .map((page) => (
                       <a
+                        key={page}
                         target="_blank"
                         rel="noreferrer"
                         className={classes.link}
@@ -158,6 +160,7 @@ const Overview = (props) => {
                       .filter((page) => page)
                       .map((page) => (
                         <a
+                          key={page}
                           target="_blank"
                           rel="noreferrer"
                           className={classes.link}

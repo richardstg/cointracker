@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import classes from "./market.module.scss";
 import CurrencyTable from "../components/currencyTable/currencyTable";
-import MarketPageNav from "../components/marketPageNav/marketPageNav";
+import PageNavigation from "../../shared/components/pageNavigation/pageNavigation";
 import LoadingSpinner from "../../shared/components/UI/LoadingSpinner/LoadingSpinner";
 import ErrorModal from "../../shared/components/UI/errorModal/errorModal";
 
@@ -30,13 +30,13 @@ const Market = (props) => {
         const responseData = await response.json();
 
         if (!response.ok) {
-          throw new Error();
+          throw new Error(response.message);
         }
 
         setCurrencies(responseData);
         setLoading(false);
       } catch (err) {
-        setError(err);
+        setError(err.message);
         setLoading(false);
       }
     };
@@ -47,18 +47,18 @@ const Market = (props) => {
   return (
     <React.Fragment>
       <ErrorModal error={error} onClear={() => setError(null)} />
-      {currencies.length > 0 && (
-        <React.Fragment>
-          <h3 className={classes.title}>
-            Top{" "}
+      <h3 className={classes.title}>
+        {/* Top{" "}
             {props.match.params.marketPageNr
               ? props.match.params.marketPageNr + "00"
-              : "100"}{" "}
-            Coins by Market Capitalization
-          </h3>
-          <MarketPageNav page={page} />
+              : "100"}{" "} */}
+        Coins by Market Capitalization
+      </h3>
+      {currencies.length > 0 && (
+        <React.Fragment>
+          <PageNavigation page={page} />
           <CurrencyTable currencies={currencies} />
-          <MarketPageNav page={page} />
+          <PageNavigation page={page} />
         </React.Fragment>
       )}
       {loading && <LoadingSpinner asOverlay />}
