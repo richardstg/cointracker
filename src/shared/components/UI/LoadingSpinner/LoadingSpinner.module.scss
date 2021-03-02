@@ -1,9 +1,9 @@
 @import "../../../styles/variables.scss";
 
 .loadingSpinner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
   // padding: 100px;
 }
 
@@ -13,8 +13,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  // background: rgba(0, 0, 0, 0.301);
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

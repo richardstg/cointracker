@@ -103,7 +103,7 @@ const Main = (props) => {
   return (
     <div className={classes.main}>
       <ErrorModal error={error} onClear={() => setError(null)} />
-      {isLoading && <LoadingSpinner />}
+      {isLoading && <LoadingSpinner asOverlay />}
       <Row>
         <Col lg={8}>
           <div>
