@@ -98,7 +98,7 @@ const Main = (props) => {
     };
 
     fetchData();
-  }, []);
+  }, [currency, id]);
 
   return (
     <div className={classes.main}>

@@ -34,6 +34,8 @@ const Currency = (props) => {
     };
 
     getCurrency();
+
+    return () => setCurrency(null);
   }, [props.match.params.currency]);
 
   return (

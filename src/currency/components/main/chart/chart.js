@@ -1,4 +1,10 @@
-import React, { useRef, useEffect, useState, useCallback } from "react";
+import React, {
+  useRef,
+  useEffect,
+  useState,
+  useCallback,
+  useMemo,
+} from "react";
 import Chartjs from "chart.js";
 import { historyOptions } from "../../../utils/chartConfigs";
 
@@ -22,9 +28,12 @@ const Chart = ({ data }) => {
 
   const [timeFormat, setTimeFormat] = useState("24h");
 
-  const timeSpans = ["24h", "7d", "14d", "30d", "90d", "180d", "1y", "Max"];
+  const timeSpans = useMemo(
+    () => ["24h", "7d", "14d", "30d", "90d", "180d", "1y", "Max"],
+    []
+  );
 
-  const determineTimeFormat = useCallback(() => {
+  const chartData = useCallback(() => {
     switch (timeFormat) {
       case timeSpans[0]:
         return day;
@@ -45,7 +54,18 @@ const Chart = ({ data }) => {
       default:
         return day;
     }
-  }, []);
+  }, [
+    day,
+    week,
+    twoWeeks,
+    month,
+    threeMonths,
+    sixMonths,
+    year,
+    max,
+    timeFormat,
+    timeSpans,
+  ]);
 
   const chartRef = useRef();
 
@@ -58,7 +78,7 @@ const Chart = ({ data }) => {
           datasets: [
             {
               label: `${detail.name} price $USD`,
-              data: determineTimeFormat(),
+              data: chartData(),
               backgroundColor: "rgba(163, 211, 255, 0.025)",
               borderColor: "rgba(163, 211, 255, 1)",
               pointRadius: 0,
@@ -70,7 +90,7 @@ const Chart = ({ data }) => {
         },
       });
     }
-  }, [timeFormat, detail, determineTimeFormat]);
+  }, [timeFormat, detail, chartData]);
 
   return (
     <div className={classes.chart}>

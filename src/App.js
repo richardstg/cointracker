@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, withRouter, Switch, Redirect } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 
 import "./shared/styles/app.scss";
 import Market from "./market/pages/market";
